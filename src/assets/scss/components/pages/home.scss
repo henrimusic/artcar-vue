@@ -1,0 +1,40 @@
+.content-slide {
+    width: 300px;
+    min-height: 420px;
+    position: absolute;
+    top: -420px;
+
+    &.right {
+        right: -60px;
+    }
+
+    &.left {
+        left: -60px;
+    }
+}
+
+#carousel {
+    @media #{$m} {
+        display: none;
+    }
+}
+
+#header-mb {
+    display: none;
+    text-shadow: 1px 1px 2px #333;
+    @media #{$m} {
+        display: block;
+    }
+}
+
+.color-3-enter-active {
+    transition: all .3s ease;
+}
+.color-3-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.color-3-enter, .color-3-leave-to
+    /* .slide-fade-leave-active em versões anteriores a 2.1.8 */ {
+    transform: translateX(10px);
+    opacity: 0;
+}

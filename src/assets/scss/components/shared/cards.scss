@@ -1,0 +1,42 @@
+.card-prin {
+    width: 90%;
+    min-height: 280px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.5s;
+    border: 1px solid rgba(128, 126, 126, 0.116);
+
+    .body{
+        padding: 0px 20px;
+        padding-bottom: 20px;
+        width: 100%;
+
+        .price {
+            height: 30px; 
+            transform: skew(15deg);
+            background-color: white;
+            padding: 3px 15px;
+            p {
+                transform: skew(-15deg);
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.55);
+    }
+
+    .bg-full {
+        height: 180px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+
+        @media #{$s-m} {
+            height: 230px;
+        }
+    }
+
+    h5 {
+        margin-top: 20px;
+    }
+}
