@@ -9,8 +9,7 @@
             
             <b-row>
 
-                
-                <b-col offset="1" cols="10">
+                <b-col offset="2" cols="10">
                     <h2 class="color-2 mt-5">
                      Nossos veículos
                     </h2>
@@ -18,19 +17,21 @@
 
                 <b-col cols="2">
                     <b-list-group>
-                        <listItem v-for="marca in marcas"
+                        <listItem v-on:veiculos="getVeiculos" v-for="marca in marcas"
                             v-bind:key="marca.marca" 
                             :marca="marca.marca"
-                             :quantidade="quantidade"/>
+                        />
                     </b-list-group>
                 </b-col>
 
-                <b-col cols="8">
+                <b-col cols="10">
                     <b-row>
-                        <!-- <card v-for="veiculo in veiculos" v-bind:data="veiculo" v-bind:key="veiculo.idVeiculo" :img="veiculo.base64" :tipo="veiculo.tipoVeiculo" :modelo="veiculo.modelo" :anoModelo="veiculo.anoModelo"/> -->
+                        <card v-for="veiculo in veiculos" v-bind:data="veiculo" v-bind:key="veiculo.idVeiculo" :veiculo="veiculo" />
                     </b-row>
                 </b-col>
+
             </b-row>
+            
         </b-container>
     </div>
 </template>
@@ -50,8 +51,7 @@ export default {
     data() {
         return {
             marcas: [],
-            quantidade: 1,
-            counter : 0
+            veiculos: [],
         };
     },
 
@@ -61,9 +61,10 @@ export default {
         .then(marcas => this.marcas = marcas, err => console.log(err));
     },
 
-    computed:{
-        
+    methods:{
+        getVeiculos(v){
+            this.veiculos = v;
+        }
     }
-
 }
 </script>

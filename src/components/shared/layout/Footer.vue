@@ -19,7 +19,7 @@
                     Mogi (11) - 4722-7995
                 </p>
             </b-col>
-            <b-col offset-lg="4" sm="2">
+            <b-col offset-lg="4" sm="1">
                 <img class="w-100" src="../../../assets/img/artcar-logo.png" alt="">
             </b-col>
         </b-row>

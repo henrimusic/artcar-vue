@@ -1,15 +1,15 @@
 <template>
     <b-col cols="6" sm="6" md="4" lg="3" class="mt-5 d-flex align-content-center justify-content-center">
-        <div class="card-prin">
-            <div class="bg-full">
-                <img class="card-img-top" :src="'data:image/png;base64,'+ img" style="max-height: 195px;border-top-left-radius: calc(1.25rem - 1px);border-top-right-radius: calc(1.25rem - 1px);">
+        <div class="card-prin" @click="pushInterna(veiculo.idVeiculo)">
+            <div class="bg-full"
+                :style="{'background-image': 'url( data:image/png;base64,' + veiculo.base64 + ')'}">
             </div>
             <div class="body">
-                <h5 class="color-3">{{ tipo }} modelo {{ modelo }}</h5>
+                <h5 class="color-3">{{ veiculo.modelo }}</h5>
                 <hr>
                 <div class="w-100 d-flex align-content-center justify-content-center">
                     <div class="price bg-color-3">
-                        <p class="color-1">{{ anoModelo }}</p>
+                        <p class="color-1">{{ veiculo.anoModelo }}</p>
                     </div>
                 </div>
                 
@@ -22,7 +22,18 @@
 <script>
 export default {
 
-    props:['tipo', 'modelo', 'img', 'anoModelo']
+    props: {
+        veiculo: {
+            required: true,
+            type: Object
+        },
+    },
+
+    methods: {
+        pushInterna(id){
+            this.$router.push({ name: 'veiculo-interna', params: { id: this.veiculo.idVeiculo } });
+        }
+    }
 
 }
 </script>

@@ -9,8 +9,8 @@
         cols="3"
         offset-lg="5"
         lg="4"
-        class="nav-col d-flex justify-content-around align-items-center"
-      >
+        class="nav-col d-flex justify-content-around align-items-center">
+        
         <router-link :to="{name: 'home'}" class="link-1 link-desk">Home</router-link>
         <router-link :to="{name: 'veiculos'}" class="link-1 link-desk">Veiculos</router-link>
         <router-link :to="{name: 'contato'}" class="link-1 link-desk">Contato</router-link>

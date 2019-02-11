@@ -1,10 +1,9 @@
 <template>
     <div id="contato">
         <b-container fluid class="vh-40 bg-full"
-            :style="{ 'background-image': 'url(' + require('../../assets/img/automobile-cars-headlights-120049.jpg') + ')' }">
+            :style="{ 'background-image': 'url(' + require('../../assets/img/automobile-cars-headlights-120049.jpg') + ')' }"
+        >
         </b-container>
-
-
         <b-container>
             <b-row>
                 <b-col cols=12>
@@ -31,42 +30,55 @@
                 <b-col md="8" offset-md="1">
                     <b-row>
                         <b-col sm="11" class="form">
-                            <b-form-group
-                                label="Endereço de e-mail"
-                                label-for="email"
-                                description="A partir deste e-mail que iremos entrar em contato."
-                            >
-                                <b-form-input id="email"
-                                    type="email"
-                                    required
-                                    placeholder="Escreva seu e-mail"
-                                    v-model="form.email"
+                            <div class="w-100">
+                                <p class="color-3">Qual o motivo do seu contato?</p>
+                                <div class="btn-toggle">
+                                    <div id="tirarDuvidasBtn" class="active" @click="handlerFormRender(1)">Tirar duvidas</div>
+                                    <div id="tirarAdiantarBtn" @click="handlerFormRender(2)">Adiantar Compra</div>
+                                </div>
+                            </div>
+                            <div v-if="simpleForm">
+                                <b-form-group
+                                    label="Endereço de e-mail"
+                                    label-for="email"
+                                    description="A partir deste e-mail que iremos entrar em contato."
+                                    class="mt-3"
                                 >
-                                </b-form-input>
-                            </b-form-group>
-                            <b-form-group
-                                label="Assunto do contato"
-                                label-for="assunto"
-                            >
-                                <b-form-input id="assunto"
-                                    type="email"
-                                    required
-                                    placeholder="Conte o motivo do seu contato"
-                                    v-model="form.assunto"
+                                    <b-form-input id="email"
+                                        type="email"
+                                        required
+                                        placeholder="Escreva seu e-mail"
+                                        v-model="form.email"
+                                    >
+                                    </b-form-input>
+                                </b-form-group>
+                                <b-form-group
+                                    label="Assunto do contato"
+                                    label-for="assunto"
                                 >
-                                </b-form-input>
-                            </b-form-group>
-                            <b-form-group
-                                label="Mensagem"
-                                label-for="mensagem"
-                            >
-                                <b-form-textarea id="mensagem"
-                                    placeholder="Escreva sua mensagem"
-                                    :rows="6"
-                                    v-model="form.msg"
+                                    <b-form-input id="assunto"
+                                        type="text"
+                                        required
+                                        placeholder="Conte o motivo do seu contato"
+                                        v-model="form.assunto"
+                                    >
+                                    </b-form-input>
+                                </b-form-group>
+                                <b-form-group
+                                    label="Mensagem"
+                                    label-for="mensagem"
                                 >
-                                </b-form-textarea>
-                            </b-form-group>
+                                    <b-form-textarea id="mensagem"
+                                        placeholder="Escreva sua mensagem"
+                                        :rows="6"
+                                        v-model="form.msg"
+                                    >
+                                    </b-form-textarea>
+                                </b-form-group>
+                            </div>
+                            <div v-if="!simpleForm">
+                                
+                            </div>
                             <b-button class="mt-3" size="lg" @click="sendForm()">Enviar</b-button>
                         </b-col>
                     </b-row>
@@ -74,13 +86,6 @@
                 <div class="w-100 mt-5"></div>
             </b-row>
         </b-container>
-
-
-
-
-
-
-
     </div>
 </template>
 
@@ -90,6 +95,7 @@ export default {
 
     data() {
         return {
+            simpleForm: true,
             form: {
                 msg: '',
                 assunto: '',
@@ -97,10 +103,26 @@ export default {
             },
         }
     },
+    
+
+    created(){
+        window.scrollTo(0, 0);
+    },
 
     methods: {
         sendForm() {
             console.log(this.form);
+        },
+        handlerFormRender(decider){
+            if (decider < 2) {
+                this.simpleForm = true
+                document.getElementById('tirarDuvidasBtn').classList.add('active');
+                document.getElementById('tirarAdiantarBtn').classList.remove('active');
+            } else {
+                this.simpleForm = false
+                document.getElementById('tirarAdiantarBtn').classList.add('active');
+                document.getElementById('tirarDuvidasBtn').classList.remove('active');
+            }
         }
     }
 }

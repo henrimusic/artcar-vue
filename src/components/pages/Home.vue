@@ -27,7 +27,7 @@
             :style="{ 'background-image': 'url(' + require('../../assets/img/img-car.jpg') + ')' }">
             <b-row>
               <b-col offset="1" cols="10">
-                <h1 class="color-1 mt-5">ArtCar</h1>
+                <h1 class="color-1 mt-5">Art Car Multimarcas</h1>
               </b-col>
               <b-col offset="1" cols="10">
                 <p class="text-left color-1">
@@ -52,7 +52,7 @@
         <b-col cols="12">
           <b-progress v-show="show" :value="value" variant="success" class="mb-2" animated></b-progress>
           <b-row>
-            <card v-for="veiculo in veiculos" v-bind:data="veiculo" v-bind:key="veiculo.idVeiculo" :img="veiculo.base64" :tipo="veiculo.tipoVeiculo" :modelo="veiculo.modelo" :anoModelo="veiculo.anoModelo"/>
+             <card v-for="veiculo in veiculos" v-bind:data="veiculo" v-bind:key="veiculo.idVeiculo" :veiculo="veiculo" />
           </b-row>
         </b-col>
       </b-row>
