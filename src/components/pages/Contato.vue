@@ -33,10 +33,11 @@
                             <div class="w-100">
                                 <p class="color-3">Qual o motivo do seu contato?</p>
                                 <div class="btn-toggle">
-                                    <div id="tirarDuvidasBtn" class="active" @click="handlerFormRender(1)">Tirar duvidas</div>
+                                    <div id="tirarDuvidasBtn" class="active" @click="handlerFormRender(1)">Tirar dúvidas</div>
                                     <div id="tirarAdiantarBtn" @click="handlerFormRender(2)">Adiantar Compra</div>
                                 </div>
                             </div>
+
                             <div v-if="simpleForm">
                                 <b-form-group
                                     label="Endereço de e-mail"
@@ -75,11 +76,59 @@
                                     >
                                     </b-form-textarea>
                                 </b-form-group>
-                            </div>
-                            <div v-if="!simpleForm">
                                 
-                            </div>
                             <b-button class="mt-3" size="lg" @click="sendForm()">Enviar</b-button>
+                            </div>
+
+
+                            <div v-if="!simpleForm">
+                                <br/>
+                                <p>
+                                    Preencha nossa ficha de financiamento e agilize o seu processo de compra. Fotografe ou digitalize o formulário preenchido e envie para o nosso Whats +55 11 97040-8908!
+                                </p> 
+
+                                <br/>
+
+                                <a href="../../src/assets/ficha.pdf" download="ficha de financiamento">
+                                    <b-button variant="primary">Ficha de Financiamento
+                                    </b-button>
+                                </a>
+
+                                <br/> 
+                                
+                                <!-- <b-form-group
+                                    label="Endereço de e-mail"
+                                    label-for="email"
+                                    description="A partir deste e-mail que iremos entrar em contato."
+                                    class="mt-3"
+                                >
+                                    <b-form-input id="email"
+                                        type="email"
+                                        required
+                                        placeholder="Escreva seu e-mail"
+                                        v-model="form.email"
+                                    >
+                                    </b-form-input>
+                                </b-form-group>
+
+                                <b-form-group
+                                    label="Ficha de financiamento"
+                                    label-for="ficha"
+                                    class="mt-3"
+                                >
+                                    <b-form-file id="ficha"
+                                        placeholder="Selecione seu pdf preenchido"
+                                        accept=".pdf"
+                                        @change="upload"
+                                        ref="fileinput"
+                                        required
+                                        >
+                                    </b-form-file>
+                                    
+                                </b-form-group> -->
+
+
+                            </div>
                         </b-col>
                     </b-row>
                 </b-col>
@@ -99,8 +148,9 @@ export default {
             form: {
                 msg: '',
                 assunto: '',
-                email: ''
-            },
+                email: '',
+                file: null
+            }
         }
     },
     
@@ -110,9 +160,43 @@ export default {
     },
 
     methods: {
-        sendForm() {
-            console.log(this.form);
+
+        upload(e){
+            e.preventDefault();
+            this.form.file = e.target.files[0];
+            console.log(this.form.file);
         },
+
+
+        sendForm() {
+            if (this.form.assunto == '') {
+                this.form.assunto = 'Ficha de financiamento';
+                
+                console.log(this.form);
+
+                this.$http.post('https://artcarmultimarcas.herokuapp.com/contato', this.form).then(() => this.form = {
+                    msg: '',
+                    assunto: '',
+                    email: '',
+                    file: null
+                }, err => console.log(err));
+    
+                this.$refs.fileinput.reset();
+
+            } else {
+                
+                console.log(this.form);
+
+                this.$http.post('https://artcarmultimarcas.herokuapp.com/contato', this.form).then(() => this.form = {
+                    msg: '',
+                    assunto: '',
+                    email: '',
+                    file: null
+                }, err => console.log(err));
+            }
+        },
+
+
         handlerFormRender(decider){
             if (decider < 2) {
                 this.simpleForm = true

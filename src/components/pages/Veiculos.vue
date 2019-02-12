@@ -14,7 +14,7 @@
                      Nossos veículos
                     </h2>
                 </b-col>
-
+                
                 <b-col cols="2">
                     <b-list-group>
                         <listItem v-on:veiculos="getVeiculos" v-for="marca in marcas"
@@ -23,7 +23,7 @@
                         />
                     </b-list-group>
                 </b-col>
-
+                
                 <b-col cols="10">
                     <b-row>
                         <card v-for="veiculo in veiculos" v-bind:data="veiculo" v-bind:key="veiculo.idVeiculo" :veiculo="veiculo" />
@@ -52,6 +52,7 @@ export default {
         return {
             marcas: [],
             veiculos: [],
+            show: true
         };
     },
 
