@@ -1,5 +1,8 @@
 <template>
     <div id="interna">
+        <b-container v-show="show">
+            <b-progress :value="100" variant="success" class="mb-2" animated></b-progress>
+        </b-container>
         <b-container fluid class="no-padding bg-full" v-if="imagens.lenght != 0">
             <b-carousel
                 style="text-shadow: 1px 1px 2px #333;"
@@ -22,7 +25,7 @@
         </b-container>
         <b-container fluid class="vh-40 bg-full"
             v-if="imagens == null"
-            :style="{ 'background-image': 'url(' + require('../../../assets/img/automobile-cars-headlights-120049.jpg') + ')' }"
+            :style="{ 'background-image': 'url(' + require('../../../assets/img/img-car.jpg') + ')' }"
         >
         </b-container>
         <b-container>
@@ -61,6 +64,7 @@
 export default {
     data() {
         return {
+            show: false,
             slide: 0,
             sliding: null,
             veiculo: {},
@@ -70,6 +74,7 @@ export default {
 
     created() {
         window.scrollTo(0, 0);
+        this.show = true;
         this.$http.get('https://artcarmultimarcas.herokuapp.com/veiculo/'+this.$route.params.id)
         .then(res => res.json())
         .then(function (veiculo){
@@ -78,6 +83,7 @@ export default {
             .then(res => res.json())
             .then(function (img){
                 this.imagens = img;
+                this.show = false;
             })
         }, err => console.log(err));
     },

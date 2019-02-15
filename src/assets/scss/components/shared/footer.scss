@@ -1,0 +1,28 @@
+.p-footer{
+    color: gray;
+    font-family: inherit;
+    padding: 2%
+}
+
+.p-footer-2{
+    text-align: center;
+    color: gray;
+    font-family: monospace;
+}
+
+.h5-footer{
+    border-bottom: 1px solid #8080801c;
+    padding-top: 10%;
+    padding-bottom: 5%;
+}
+
+.link{
+    text-decoration: none;
+    color: gray;
+    font-family: inherit;
+    font-size: medium;
+    &:hover{
+        text-decoration: none;
+        color: white;
+    }
+}

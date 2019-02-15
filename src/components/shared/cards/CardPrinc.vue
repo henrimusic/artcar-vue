@@ -5,7 +5,7 @@
                 :style="{'background-image': 'url( data:image/png;base64,' + veiculo.base64 + ')'}">
             </div>
             <div class="body">
-                <h5 class="color-3">{{ veiculo.modelo }}</h5>
+                <h5 class="color-3">{{ veiculo.modelo }}  {{ veiculo.versao }}</h5>
                 <hr>
                 <div class="w-100 d-flex align-content-center justify-content-center">
                     <div class="price bg-color-3">

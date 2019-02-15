@@ -1,7 +1,7 @@
 <template>
     <div id="contato">
         <b-container fluid class="vh-40 bg-full"
-            :style="{ 'background-image': 'url(' + require('../../assets/img/automobile-cars-headlights-120049.jpg') + ')' }"
+            :style="{ 'background-image': 'url(' + require('../../assets/img/automobile.jpg') + ')' }"
         >
         </b-container>
         <b-container>
@@ -83,52 +83,18 @@
 
                             <div v-if="!simpleForm">
                                 <br/>
-                                <p>
+                                <p class="color-2 text-justify mt-4">
                                     Preencha nossa ficha de financiamento e agilize o seu processo de compra. Fotografe ou digitalize o formulário preenchido e envie para o nosso Whats +55 11 97040-8908!
                                 </p> 
 
                                 <br/>
-
-                                <a href="../../src/assets/ficha.pdf" download="ficha de financiamento">
+                                <a :href="require('../../assets/pdf/ficha.pdf')" download="ficha de financiamento">
                                     <b-button variant="primary">Ficha de Financiamento
                                     </b-button>
                                 </a>
-
                                 <br/> 
-                                
-                                <!-- <b-form-group
-                                    label="Endereço de e-mail"
-                                    label-for="email"
-                                    description="A partir deste e-mail que iremos entrar em contato."
-                                    class="mt-3"
-                                >
-                                    <b-form-input id="email"
-                                        type="email"
-                                        required
-                                        placeholder="Escreva seu e-mail"
-                                        v-model="form.email"
-                                    >
-                                    </b-form-input>
-                                </b-form-group>
-
-                                <b-form-group
-                                    label="Ficha de financiamento"
-                                    label-for="ficha"
-                                    class="mt-3"
-                                >
-                                    <b-form-file id="ficha"
-                                        placeholder="Selecione seu pdf preenchido"
-                                        accept=".pdf"
-                                        @change="upload"
-                                        ref="fileinput"
-                                        required
-                                        >
-                                    </b-form-file>
-                                    
-                                </b-form-group> -->
-
-
                             </div>
+
                         </b-col>
                     </b-row>
                 </b-col>
@@ -148,8 +114,7 @@ export default {
             form: {
                 msg: '',
                 assunto: '',
-                email: '',
-                file: null
+                email: ''
             }
         }
     },
@@ -169,32 +134,13 @@ export default {
 
 
         sendForm() {
-            if (this.form.assunto == '') {
-                this.form.assunto = 'Ficha de financiamento';
-                
-                console.log(this.form);
-
-                this.$http.post('https://artcarmultimarcas.herokuapp.com/contato', this.form).then(() => this.form = {
-                    msg: '',
-                    assunto: '',
-                    email: '',
-                    file: null
-                }, err => console.log(err));
-    
-                this.$refs.fileinput.reset();
-
-            } else {
-                
-                console.log(this.form);
-
-                this.$http.post('https://artcarmultimarcas.herokuapp.com/contato', this.form).then(() => this.form = {
-                    msg: '',
-                    assunto: '',
-                    email: '',
-                    file: null
-                }, err => console.log(err));
-            }
+            this.$http.post('https://artcarmultimarcas.herokuapp.com/contato', this.form).then(() => this.form = {
+                msg: '',
+                assunto: '',
+                email: ''
+            }, err => console.log(err));
         },
+        
 
 
         handlerFormRender(decider){
@@ -208,6 +154,7 @@ export default {
                 document.getElementById('tirarDuvidasBtn').classList.remove('active');
             }
         }
+        
     }
 }
 </script>

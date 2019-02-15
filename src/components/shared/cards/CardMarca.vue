@@ -18,7 +18,9 @@ export default {
         log: function(id){
             this.$http.get('https://artcarmultimarcas.herokuapp.com/list-marca/'+id)
             .then(res => res.json())
-            .then(veiculos => this.$emit('veiculos', veiculos), err => console.log(err));
+            .then(function(veiculos) {
+                this.$emit('veiculos', veiculos, false);
+            }, err => console.log(err));
         }
     },
 

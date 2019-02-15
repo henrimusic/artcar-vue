@@ -8,18 +8,18 @@
             style="text-shadow: 1px 1px 2px #333;"
             indicators
             :interval="3000"
-            img-width="100%"
+            img-width="1024px"
+            img-height="480px"
             v-model="slide"
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
           >
             <b-carousel-slide :img-src="require('../../assets/img/img-car.jpg')">
               <div class="content-slide right">
-                <h1 class="color-1">ArtCar</h1>
-                <p class="text-left">Contamos com uma equipe especializada, com o foco em dar a melhor consultoria na hora de escolher seu sonhado veículo. Com duas concessionárias, em Suzano e outra em Mogi e 20 anos de experiência no mercado da região, confiança e transparência é a base de nosso relacionamento com você. Melhor atender e realizar seu sonho é a nossa arte.</p>
+                <h1>Art Car a marca do seu carro</h1>
               </div>
             </b-carousel-slide>
-            <b-carousel-slide :img-src="require('../../assets/img/automobile-cars-headlights-120049.jpg')">
+            <b-carousel-slide :img-src="require('../../assets/img/automobile.jpg')">
               <h1>Vender carros é nossa arte</h1>
             </b-carousel-slide>
           </b-carousel>
@@ -31,7 +31,7 @@
               </b-col>
               <b-col offset="1" cols="10">
                 <p class="text-left color-1">
-                  Contamos com uma equipe especializada, com o foco em dar a melhor consultoria na hora de escolher seu sonhado veículo. Com duas concessionárias, em Suzano e outra em Mogi e 20 anos de experiência no mercado da região, confiança e transparência é a base de nosso relacionamento com você. Melhor atender e realizar seu sonho é a nossa arte.
+                  A marca do seu carro
                 </p>
               </b-col>
               </b-row>
