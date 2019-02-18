@@ -3,14 +3,14 @@
         <b-container v-show="show">
             <b-progress :value="100" variant="success" class="mb-2" animated></b-progress>
         </b-container>
-        <b-container fluid class="no-padding bg-full" v-if="imagens.lenght != 0">
+        <b-container fluid class="no-padding" v-if="imagens.lenght != 0">
             <b-carousel
                 style="text-shadow: 1px 1px 2px #333;"
                 indicators
                 controls
                 :interval="3000"
-                img-width="1024px"
-                img-height="480px"
+                img-width="720px"
+                img-height="320px"
                 v-model="slide"
                 @sliding-start="onSlideStart"
                 @sliding-end="onSlideEnd"
@@ -22,6 +22,7 @@
                 >
                 </b-carousel-slide>
             </b-carousel>
+
         </b-container>
         <b-container fluid class="vh-40 bg-full"
             v-if="imagens == null"

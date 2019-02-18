@@ -1,7 +1,8 @@
 .p-footer{
     color: gray;
     font-family: inherit;
-    padding: 2%
+    margin-top: 5%;
+    text-align: justify;
 }
 
 .p-footer-2{
@@ -11,16 +12,19 @@
 }
 
 .h5-footer{
+    font-family: inherit;
     border-bottom: 1px solid #8080801c;
-    padding-top: 10%;
-    padding-bottom: 5%;
+    padding-top: 15%;
+    padding-bottom: 6%;
 }
 
 .link{
+    border-bottom: 1px solid #8080801c;
+    padding-bottom: 2%;
     text-decoration: none;
     color: gray;
-    font-family: inherit;
-    font-size: medium;
+    font-family: inherit !important;
+    font-size: medium !important;
     &:hover{
         text-decoration: none;
         color: white;

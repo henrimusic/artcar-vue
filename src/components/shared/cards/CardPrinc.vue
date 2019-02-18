@@ -1,5 +1,5 @@
 <template>
-    <b-col cols="6" sm="6" md="4" lg="3" class="mt-5 d-flex align-content-center justify-content-center">
+    <b-col cols="8" sm="8" md="6" lg="3" class="mt-5 d-flex align-content-center justify-content-center">
         <div class="card-prin" @click="pushInterna(veiculo.idVeiculo)">
             <div class="bg-full"
                 :style="{'background-image': 'url( data:image/png;base64,' + veiculo.base64 + ')'}">

@@ -11,9 +11,8 @@
                         Entre em Contato
                     </h2>
                 </b-col>
-                <div class="w-100 mt-5"></div>
                 <b-col md="3" class="p-5">
-                    <p class="color-2 text-justify mt-4">
+                    <b-row><p class="color-3 text-left">
                         <svg width="30" version="1.1" xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 64 64" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 64 64">
                             <g>
                                 <g fill="#1D1D1B">
@@ -25,7 +24,41 @@
                             </g>
                         </svg>
                         Mande sua dúvida ou sugestão, vamos ficar felizes em esclarecer qualquer coisa!
-                    </p>
+                    </p></b-row>
+                    
+                    <b-row><p class="color-3 text-justify mt-4" style="text-align: center;">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="30" height="30" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                        <path fill="#1D1D1B" stroke="#1D1D1B" stroke-width="12" stroke-linejoin="round" stroke-miterlimit="10" d="M357.929,296.145
+                            l-48.617,48.9l24.145,24.133c0,0-59.938-14-120.485-74.254c-49.488-49.489-69.788-96.002-70.398-116.596l20.3,20.271l48.9-48.612
+                            L89.805,28.016L41.188,76.943l0.905,0.876C10.462,129.134,57.88,247.822,159.005,348.912
+                            c107.639,107.684,223.352,166.422,271.991,117.816l48.617-48.605L357.929,296.145z"/>
+                        </svg>
+                        Telefone
+                        <br/>
+                        (11) 4747-3202 - Suzano
+                        <br/>
+                        (11) 4722-7995 - Mogi
+                    </p></b-row>
+
+
+                    
+
+                    <b-row><p class="color-3 text-left mt-4" style="text-align: center;">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="30" height="30" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                        <path d="M256,4c-78.509,0-142.154,63.644-142.154,142.154S256,508,256,508s142.154-283.337,142.154-361.846S334.509,4,256,4z
+                            M256,246.308c-53.529,0-96.923-43.394-96.923-96.923S202.471,52.462,256,52.462s96.923,43.394,96.923,96.923
+                            S309.529,246.308,256,246.308z"/>
+                        </svg>
+                        Endereço
+                        <br/>
+                        Loja 1 - Av. Brasil, 1301 Jd. Monte Cristo - Suzano - SP
+                        <br/>
+                        Loja 2 - R. Guilherme George, 2336 Jundiapeba - Mogi das Cruzes - SP
+                    </p></b-row>
+
+                    
                 </b-col>
                 <b-col md="8" offset-md="1">
                     <b-row>

@@ -2,10 +2,24 @@
     &-1 {
         color: $c-white;
         text-decoration: none;
-
+        font-size: larger;
+        font-family: inherit;
         &:hover {
             text-decoration: none;
             color:$c-white;
+        }
+    }
+}
+
+.link {
+    &-2 {
+        color: $c-black;
+        text-decoration: none;
+        font-size: larger;
+        font-family: inherit;
+        &:hover {
+            text-decoration: none;
+            color:$c-black;
         }
     }
 }

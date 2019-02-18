@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="vh-20  bg-color-3">
+    <div class="vh-40  bg-color-3">
         <b-container class="container">
             <b-row>
                 <b-col sm="4">
@@ -9,7 +9,7 @@
                 </b-col>
 
                 <b-col sm="4">
-                    <h5 class="h5-footer color-1">Conteúdo do site</h5>
+                    <h5 class="h5-footer color-1" style="margin-bottom: 5%;">Conteúdo do site</h5>
                     <router-link :to="{name: 'home'}" class="link"> > Página principal</router-link>
                     <br/><br/>
                     <router-link :to="{name: 'veiculos'}" class="link"> > Lista de veículos por marca</router-link>
@@ -19,7 +19,7 @@
 
                 <b-col sm="4">
                     <h5 class="h5-footer color-1">Parceria</h5>
-                    <p class="p-footer" style="text-align: center"> 
+                    <p class="p-footer text-left"> 
                          
                         Dias Pimentel corretora de Seguros
                         
