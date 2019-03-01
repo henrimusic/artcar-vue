@@ -1,44 +1,60 @@
 <template>
   <div id="home">
-    <b-container fluid class="vh-90 no-padding bg-full">
+    <b-container fluid class="vh-40 no-padding bg-full">
+
       <b-row class="no-margin">
+
         <b-col cols="12" class="no-padding">
           <b-carousel
             id="carousel"
+            fade
             style="text-shadow: 1px 1px 2px #333;"
             indicators
             :interval="3000"
-            img-width="1024px"
-            img-height="480px"
             v-model="slide"
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
           >
             <b-carousel-slide :img-src="require('../../assets/img/img-car.jpg')">
               <div class="content-slide right">
-                <h1>Art Car a marca do seu carro</h1>
+                <h1>Art Car Multimarcas</h1>
+                <h4>A Marca do seu carro</h4>
               </div>
             </b-carousel-slide>
-            <b-carousel-slide :img-src="require('../../assets/img/automobile.jpg')">
-              <h1>Vender carros é nossa arte</h1>
+            
+            <b-carousel-slide :img-src="require('../../assets/img/fachada_mogi.jpeg')">
+              <h1>Loja de Jundiapeba Mogi</h1>
             </b-carousel-slide>
+
+            <b-carousel-slide :img-src="require('../../assets/img/fachada_suzano.jpeg')">
+              <h1>Loja de Suzano</h1>
+            </b-carousel-slide>  
+
           </b-carousel>
-          <div id="header-mb" class="bg-full vh-100 init-pad"
-            :style="{ 'background-image': 'url(' + require('../../assets/img/img-car.jpg') + ')' }">
-            <b-row>
-              <b-col offset="1" cols="10">
-                <h1 class="color-1 mt-5">Art Car Multimarcas</h1>
-              </b-col>
-              <b-col offset="1" cols="10">
-                <p class="text-left color-1">
-                  A marca do seu carro
-                </p>
-              </b-col>
+
+          <div id="header-mb">
+            
+            <b-container fluid class="no-padding">
+
+              <b-row class="no-margin" style="text-align: center;color: white;">
+
+                <b-container fluid class="vh-40 bg-full" :style="{ 'background-image': 'url(' + require('../../assets/img/img-car.jpg') + ')' }">
+                    <h1>Art Car Multimarcas</h1>
+                    <p>A Marca do seu carro</p>
+                </b-container>
+                
               </b-row>
+            
+            </b-container>
+          
           </div>
+
         </b-col>
+
       </b-row>
+      
     </b-container>
+
     <b-container fluid class="vh-80 bg-color-1 pb-4">
       <b-row>
         <b-col offset="1" cols="10">
